@@ -1,5 +1,3 @@
-import {View, Text} from 'react-native';
-import React from 'react';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
@@ -9,10 +7,10 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomePage from '../pages/homePage/HomePage';
-import StudentsPage from '../pages/studentsPage/StudentsPage';
-import AcademyManagementPage from '../pages/academyManagementPage/AcademyManagementPage';
-import ActivitiesPage from '../pages/activitiesPage/ActivitiesPage';
+import HomePage from '../pages/HomePage/HomePage';
+import {StudentsPage} from '../pages/StudentsPage/StudentsPage';
+import {AcademyManagementPage} from '../pages/AcademyManagementPage/AcademyManagementPage';
+import {ActivitiesPage} from '../pages/ActivitiesPage/ActivitiesPage';
 
 //note: in order to hide the navbar in some pages the method found here https://reactnavigation.org/docs/hiding-tabbar-in-screens is need, the following component is the tab navigator that has all the main pages.
 const Tab = createBottomTabNavigator<TabNavigationPrams>();
@@ -81,7 +79,7 @@ const academyNavigatorOptions: NativeStackNavigationOptions = {
   //headerShown: false,
   headerTitleAlign: 'center',
 };
-const AcademyAppNavigator = () => {
+export const AcademyAppNavigator = () => {
   return (
     <Stack.Navigator screenOptions={academyNavigatorOptions}>
       <Stack.Screen name="BottomTabPages" component={BottomTabPages} />
@@ -90,4 +88,3 @@ const AcademyAppNavigator = () => {
   );
 };
 
-export default AcademyAppNavigator;
