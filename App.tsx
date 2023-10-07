@@ -1,4 +1,3 @@
-import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -17,7 +16,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import AppNavigator from './src/navigation/AppNavigator';
+import {AppNavigator} from './src/navigation/AppNavigator';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
