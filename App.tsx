@@ -17,6 +17,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {LongButton} from './src/components/LongButton';
 
 type SectionProps = PropsWithChildren<{
   title: string;
