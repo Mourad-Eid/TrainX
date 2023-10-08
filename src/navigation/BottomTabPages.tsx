@@ -1,8 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {HomePage} from '../pages/HomePage/HomePage';
-import {StudentsPage} from '../pages/StudentsPage/StudentsPage';
-import {AcademyManagementPage} from '../pages/AcademyManagementPage/AcademyManagementPage';
+import {HomePage} from '../pages/HomePageTrial/HomePage';
+import {StudentsPage} from '../pages/StudentsPageTrial/StudentsPage';
+import {AcademyManagementPage} from '../pages/AcademyManagementPageTrial/AcademyManagementPage';
 
 //note: in order to hide the navbar in some pages the method found here https://reactnavigation.org/docs/hiding-tabbar-in-screens is need, the following component is the tab navigator that has all the main pages.
 const Tab = createBottomTabNavigator<TabNavigationPrams>();

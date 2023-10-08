@@ -1,22 +1,6 @@
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import {LongButton} from './src/components/LongButton';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {AppNavigator} from './src/navigation/AppNavigator';
 import {PaperProvider} from 'react-native-paper';
 import {useAppTheme} from './src/components/theme/theme';
