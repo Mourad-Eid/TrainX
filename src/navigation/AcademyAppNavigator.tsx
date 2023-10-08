@@ -3,7 +3,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import {ActivitiesPage} from '../pages/ActivitiesPage/ActivitiesPage';
-import { BottomTabPages } from './BottomTabPages';
+import {BottomTabPages} from './BottomTabPages';
 
 //this is the stack component that will have the bottom nav and all the other pages in the academy App
 const Stack = createNativeStackNavigator<AcademyNavigatorParams>();
