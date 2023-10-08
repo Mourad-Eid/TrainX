@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
-import {Button} from 'react-native-paper';
-import {AppTheme, useAppTheme} from './theme/theme';
+import { StyleSheet } from 'react-native';
+import { Button } from 'react-native-paper';
+import { AppTheme, useAppTheme } from '../theme/theme';
 
 type StyledButtonProps = React.ComponentProps<typeof Button> & {
   version: 'primary' | 'secondary' | 'tertiary' | 'danger';
 };
 
 export const LongButton = (props: StyledButtonProps) => {
-  const {version, children, ...buttonProps} = props;
+  const { version, children, ...buttonProps } = props;
   const theme = useAppTheme();
   const textColor =
     version === 'secondary' ? theme.colors.primary : theme.colors.black5;
@@ -33,7 +33,7 @@ const makeStyles = (theme: AppTheme) =>
     primary: {
       backgroundColor: theme.colors.primary,
       shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: {height: 2, width: 2},
+      shadowOffset: { height: 2, width: 2 },
     },
     secondary: {
       backgroundColor: theme.colors.black5,
@@ -43,11 +43,11 @@ const makeStyles = (theme: AppTheme) =>
     tertiary: {
       backgroundColor: theme.colors.warning,
       shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: {height: 2, width: 2},
+      shadowOffset: { height: 2, width: 2 },
     },
     danger: {
       backgroundColor: theme.colors.error,
       shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: {height: 2, width: 2},
+      shadowOffset: { height: 2, width: 2 },
     },
   });

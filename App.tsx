@@ -1,9 +1,9 @@
-import {StatusBar, useColorScheme} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {AppNavigator} from './src/navigation/AppNavigator';
-import {PaperProvider} from 'react-native-paper';
-import {useAppTheme} from './src/components/theme/theme';
+import { StatusBar, useColorScheme } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { AppNavigator } from './src/navigation/AppNavigator';
+import { PaperProvider } from 'react-native-paper';
+import { useAppTheme } from './src/theme/theme';
 
 export const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
