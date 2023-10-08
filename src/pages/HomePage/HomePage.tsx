@@ -1,9 +1,12 @@
-import {View, Text} from 'react-native';
+import { View } from 'react-native';
+import { Typography } from '../../components/Typography';
 
 export const HomePage = () => {
   return (
     <View>
-      <Text>homePage</Text>
+      <Typography version="heading1" color="#895559">
+        HomePage
+      </Typography>
     </View>
   );
 };
