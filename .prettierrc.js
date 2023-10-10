@@ -1,7 +1,24 @@
 module.exports = {
-  arrowParens: 'avoid',
-  bracketSameLine: false,
-  bracketSpacing: true,
-  singleQuote: true,
-  trailingComma: 'all',
-};
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 150,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "useTabs": false,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "useTabs": false,
+        "tabWidth": 2
+      }
+    }
+  ]
+}
