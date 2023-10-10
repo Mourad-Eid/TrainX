@@ -44,7 +44,6 @@ target 'train_x' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-
   target 'train_xTests' do
     inherit! :complete
     # Pods for testing

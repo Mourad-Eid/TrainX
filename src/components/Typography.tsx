@@ -1,5 +1,6 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { PropsWithChildren } from 'react';
+import { Text } from 'react-native-paper';
 
 type TypographyProps = {
   version:

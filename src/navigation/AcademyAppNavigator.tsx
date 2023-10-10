@@ -12,13 +12,12 @@ export type AcademyNavigatorParams = {
   ActivitiesPage: undefined;
 };
 const academyNavigatorOptions: NativeStackNavigationOptions = {
-  //headerShown: false,
   headerTitleAlign: 'center',
 };
 export const AcademyAppNavigator = () => {
   return (
     <Stack.Navigator screenOptions={academyNavigatorOptions}>
-      <Stack.Screen name="BottomTabPages" component={BottomTabPages} />
+      <Stack.Screen name="BottomTabPages" component={BottomTabPages} options={{headerShown: false}}/>
       <Stack.Screen name="ActivitiesPage" component={ActivitiesPage} />
     </Stack.Navigator>
   );

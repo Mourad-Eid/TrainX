@@ -4,6 +4,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { AppNavigator } from './src/navigation/AppNavigator';
 import { PaperProvider } from 'react-native-paper';
 import { useAppTheme } from './src/theme/theme';
+import './i18n/i18n';
 
 export const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
