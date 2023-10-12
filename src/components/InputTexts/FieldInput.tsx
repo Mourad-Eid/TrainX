@@ -1,5 +1,4 @@
 import { I18nManager, StyleSheet, TextInput, View } from "react-native";
-import React from "react";
 import { AppTheme, useAppTheme } from "../../theme/theme";
 import { Typography } from "../Typography";
 import { FieldError } from "react-hook-form";
@@ -9,7 +8,7 @@ type StyledTextInputProps = React.ComponentProps<typeof TextInput> & {
   label?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  error?: FieldError | undefined;
+  error?: FieldError;
 };
 
 export const FieldInput = (props: StyledTextInputProps) => {
@@ -20,9 +19,7 @@ export const FieldInput = (props: StyledTextInputProps) => {
   return (
     <View style={styles.inputContainer}>
       <Typography version="label">{label}</Typography>
-      <View
-        style={[styles.inputFieldView, { borderColor: error ? theme.colors.error : theme.colors.black50 }]}
-      >
+      <View style={[styles.inputFieldView, { borderColor: error ? theme.colors.error : theme.colors.black50 }]}>
         {leftIcon}
         <TextInput style={styles.inputField} {...props} />
         {rightIcon}
@@ -43,10 +40,10 @@ const makeStyles = (theme: AppTheme) =>
       padding: 4,
       fontSize: 14,
       fontWeight: "400",
+      fontFamily: "Rubik",
       textAlign: I18nManager.isRTL ? "right" : "left",
     },
     inputContainer: { marginHorizontal: 8, marginVertical: 4 },
-
     inputFieldView: {
       borderRadius: 12,
       borderWidth: 0.5,

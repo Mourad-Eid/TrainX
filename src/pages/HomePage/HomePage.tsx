@@ -3,8 +3,8 @@ import { Typography } from "../../components/Typography";
 import { useTranslation } from "react-i18next";
 import { toggleLanguage } from "../../../i18n/i18n";
 import { PhoneInput } from "../../components/InputTexts/PhoneInput";
-import { useForm, Controller } from "react-hook-form";
-import EmailInput from "../../components/InputTexts/EmailInput";
+import { useForm } from "react-hook-form";
+import { EmailInput } from "../../components/InputTexts/EmailInput";
 import { NameInput } from "../../components/InputTexts/NameInput";
 import { PasswordInput } from "../../components/InputTexts/PasswordInput";
 
@@ -29,6 +29,7 @@ export const HomePage = () => {
   const SubmitHandle = (data: LoginData) => {
     console.log("enterted credentials: ", data);
   };
+
   return (
     <View>
       <View style={styles.redView}></View>
