@@ -3,11 +3,9 @@ import { Controller, FieldValues } from "react-hook-form";
 import { useAppTheme } from "../../theme/theme";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { FieldInput } from "./FieldInput";
-import { InputProps } from "./InputProps";
+import { InputProps } from "./types";
 
-export const PasswordInput = <TFieldValues extends FieldValues = FieldValues>(
-  props: InputProps<TFieldValues>,
-) => {
+export const PasswordInput = <TFieldValues extends FieldValues = FieldValues>(props: InputProps<TFieldValues>) => {
   const { t } = useTranslation();
   const { control, name, ...inputprops } = props;
   const theme = useAppTheme();
@@ -16,7 +14,7 @@ export const PasswordInput = <TFieldValues extends FieldValues = FieldValues>(
       control={control}
       name={name}
       rules={{
-        required: t("passwordIsRequired").toString(),
+        required: t("passwordIsRequired"),
         minLength: {
           value: 8,
           message: t("pass8CharsError"),
@@ -25,13 +23,7 @@ export const PasswordInput = <TFieldValues extends FieldValues = FieldValues>(
       render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => {
         return (
           <FieldInput
-            leftIcon={
-              <MaterialCommunityIcons
-                name="lock-outline"
-                size={24}
-                color={error ? theme.colors.error : theme.colors.black50}
-              />
-            }
+            leftIcon={<MaterialCommunityIcons name="lock-outline" size={24} color={error ? theme.colors.error : theme.colors.black50} />}
             label={t("password")}
             error={error}
             value={value}
