@@ -33,7 +33,7 @@ export const HomePage = () => {
   return (
     <View>
       <View style={styles.redView}></View>
-      <Typography version="heading6" color="#895559">
+      <Typography version="heading5" color="#895559">
         {t("homePage")}
       </Typography>
       <PhoneInput name="phoneNumber" control={control} />
