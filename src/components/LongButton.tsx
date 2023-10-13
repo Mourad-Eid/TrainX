@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet } from "react-native";
 import { AppTheme, useAppTheme } from "../theme/theme";
 import { Typography } from "./Typography";
+import React from "react";
 
 type StyledButtonProps = React.ComponentProps<typeof Pressable> & {
   version: "primary" | "secondary" | "tertiary" | "danger";
@@ -24,7 +25,7 @@ export const LongButton = (props: StyledButtonProps) => {
 const makeStyles = (theme: AppTheme) =>
   StyleSheet.create({
     basic: {
-      marginHorizontal: 24,
+      marginHorizontal: 8,
       borderRadius: 8,
       height: 40,
       color: theme.colors.black5,
