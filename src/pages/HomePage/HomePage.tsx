@@ -32,7 +32,7 @@ export const HomePage = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.redView}></View>
       <Typography version="heading5" color="#895559">
         {t("homePage")}
@@ -48,6 +48,9 @@ export const HomePage = () => {
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 8,
+  },
   redView: {
     height: 100,
     width: "50%",

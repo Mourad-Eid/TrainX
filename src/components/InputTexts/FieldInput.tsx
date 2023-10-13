@@ -45,7 +45,7 @@ const makeStyles = (theme: AppTheme) =>
     },
     inputContainer: { marginHorizontal: 8, marginVertical: 4 },
     inputFieldView: {
-      borderRadius: 12,
+      borderRadius: 8,
       borderWidth: 0.5,
       borderColor: theme.colors.black50,
       paddingHorizontal: 8,
