@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { EmailInput } from "../../components/InputTexts/EmailInput";
 import { NameInput } from "../../components/InputTexts/NameInput";
 import { PasswordInput } from "../../components/InputTexts/PasswordInput";
+import { LongButton } from "../../components/LongButton";
 
 type LoginData = {
   phoneNumber: string;
@@ -36,12 +37,13 @@ export const HomePage = () => {
       <Typography version="heading5" color="#895559">
         {t("homePage")}
       </Typography>
+      <LongButton version="primary" title="Testing Button" />
       <PhoneInput name="phoneNumber" control={control} />
       <EmailInput name="email" control={control} />
       <NameInput name="name" control={control} />
       <PasswordInput name="password" control={control} />
       <Button title={t("changeLanguage")} onPress={toggleLanguage} />
-      <Button title={t("submit")} onPress={handleSubmit(SubmitHandle)} />
+      <LongButton version="primary" title={t("submit")} onPress={handleSubmit(SubmitHandle)} />
     </View>
   );
 };
