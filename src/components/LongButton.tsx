@@ -1,25 +1,23 @@
-import { StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
-import { AppTheme, useAppTheme } from '../theme/theme';
+import { Pressable, StyleSheet } from "react-native";
+import { AppTheme, useAppTheme } from "../theme/theme";
+import { Typography } from "./Typography";
 
-type StyledButtonProps = React.ComponentProps<typeof Button> & {
-  version: 'primary' | 'secondary' | 'tertiary' | 'danger';
+type StyledButtonProps = React.ComponentProps<typeof Pressable> & {
+  version: "primary" | "secondary" | "tertiary" | "danger";
+  title: string;
 };
 
 export const LongButton = (props: StyledButtonProps) => {
-  const { version, children, ...buttonProps } = props;
+  const { version, title: buttonText, ...buttonProps } = props;
   const theme = useAppTheme();
-  const textColor =
-    version === 'secondary' ? theme.colors.primary : theme.colors.black5;
   const styles = makeStyles(theme);
 
   return (
-    <Button
-      style={[styles.basic, styles[version]]}
-      textColor={textColor}
-      {...buttonProps}>
-      {children}
-    </Button>
+    <Pressable style={({ pressed }) => [styles.basic, styles[version], { opacity: pressed ? 0.5 : 1 }]} {...buttonProps}>
+      <Typography version="subHeader" color={version === "secondary" ? theme.colors.primary : theme.colors.black5}>
+        {buttonText}
+      </Typography>
+    </Pressable>
   );
 };
 
@@ -29,25 +27,39 @@ const makeStyles = (theme: AppTheme) =>
       marginHorizontal: 24,
       borderRadius: 8,
       height: 40,
+      color: theme.colors.black5,
+      justifyContent: "center",
+      textAlign: "center",
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 2,
+      elevation: 2,
     },
     primary: {
       backgroundColor: theme.colors.primary,
-      shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: { height: 2, width: 2 },
     },
     secondary: {
       backgroundColor: theme.colors.black5,
       borderColor: theme.colors.primary,
       borderWidth: 1,
+      color: theme.colors.primary,
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowOpacity: 0,
+      shadowRadius: 0,
+      elevation: 0,
     },
     tertiary: {
       backgroundColor: theme.colors.warning,
-      shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: { height: 2, width: 2 },
     },
     danger: {
       backgroundColor: theme.colors.error,
-      shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOffset: { height: 2, width: 2 },
     },
   });

@@ -1,7 +1,20 @@
-import { useColorScheme } from "react-native";
+import { TextStyle, useColorScheme } from "react-native";
 import { MD3LightTheme, MD3DarkTheme, useTheme } from "react-native-paper";
 
-const fonts = {
+type FontsType = {
+  heading1: TextStyle;
+  heading2: TextStyle;
+  heading3: TextStyle;
+  heading4: TextStyle;
+  heading5: TextStyle;
+  heading6: TextStyle;
+  subHeader: TextStyle;
+  paragraph: TextStyle;
+  labelBig: TextStyle;
+  label: TextStyle;
+};
+
+const fonts: FontsType = {
   heading1: {
     fontSize: 68,
     fontWeight: "600",
@@ -32,7 +45,7 @@ const fonts = {
     fontWeight: "600",
     fontFamily: "Rubik SemiBold",
   },
-  subHeading: {
+  subHeader: {
     fontSize: 18,
     fontWeight: "400",
     fontFamily: "Rubik",
@@ -74,7 +87,10 @@ export const lightTheme = {
     black10: "#EBEDEF",
     black5: "#F7F9FA",
   },
-  fonts: fonts,
+  fonts: {
+    ...MD3LightTheme.fonts,
+    ...fonts,
+  },
 };
 
 export const darkTheme = {
@@ -97,7 +113,10 @@ export const darkTheme = {
     black10: "#EBEDEF",
     black5: "#F7F9FA",
   },
-  fonts: fonts,
+  fonts: {
+    ...MD3DarkTheme.fonts,
+    ...fonts,
+  },
 };
 
 const isDarkMode = useColorScheme() === "dark";
