@@ -38,9 +38,9 @@ const makeStyles = (theme: AppTheme) =>
     inputField: {
       flex: 1,
       padding: 4,
-      fontSize: 14,
-      fontWeight: "400",
-      fontFamily: "Rubik",
+      fontSize: theme.fonts.labelBig.fontSize,
+      fontWeight: theme.fonts.labelBig.fontWeight,
+      fontFamily: theme.fonts.labelBig.fontFamily,
       textAlign: I18nManager.isRTL ? "right" : "left",
     },
     inputContainer: { marginHorizontal: 8, marginVertical: 4 },

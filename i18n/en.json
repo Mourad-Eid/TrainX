@@ -24,6 +24,9 @@
     "email": "Email",
     "emailIsRequired": "Email is required.",
     "emailIsInvalid": "Email is invalid.",
+    "OTPIsRequired": "OTP is required.",
+    "OTP6CharsError": "OTP is 6 characters long.",
+    "OTP": "OTP",
     /////////////////////////////////////////////////////////////////////////
     //HOME PAGE
     ////////////////////////////////////////////////////////////////////////

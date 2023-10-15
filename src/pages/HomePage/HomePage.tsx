@@ -8,6 +8,7 @@ import { EmailInput } from "../../components/InputTexts/EmailInput";
 import { NameInput } from "../../components/InputTexts/NameInput";
 import { PasswordInput } from "../../components/InputTexts/PasswordInput";
 import { LongButton } from "../../components/LongButton";
+import { OTPInput } from "../../components/InputTexts/OTPInput";
 
 type LoginData = {
   phoneNumber: string;
@@ -24,6 +25,7 @@ export const HomePage = () => {
       name: "",
       email: "",
       password: "",
+      OTP: "",
     },
   });
 
@@ -33,15 +35,14 @@ export const HomePage = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.redView}></View>
       <Typography version="heading5" color="#895559">
         {t("homePage")}
       </Typography>
-      <LongButton version="primary" title="Testing Button" />
       <PhoneInput name="phoneNumber" control={control} />
       <EmailInput name="email" control={control} />
       <NameInput name="name" control={control} />
       <PasswordInput name="password" control={control} />
+      <OTPInput name="OTP" control={control} />
       <Button title={t("changeLanguage")} onPress={toggleLanguage} />
       <LongButton version="primary" title={t("submit")} onPress={handleSubmit(SubmitHandle)} />
     </View>
@@ -49,11 +50,6 @@ export const HomePage = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 8,
-  },
-  redView: {
-    height: 100,
-    width: "50%",
-    backgroundColor: "red",
+    padding: 8,
   },
 });
