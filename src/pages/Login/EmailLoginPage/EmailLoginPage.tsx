@@ -12,7 +12,11 @@ import ClickableText from "../../../components/ClickableText";
 import { SafeAreaContainer } from "../../../components/SafeAreaContainer";
 import { Footer } from "../../../components/Footer";
 import { NoAccountCreate } from "../Shared/NoAccountCreate";
-export const EmailLoginPage = () => {
+import { AuthNavigatorParams } from "../../../navigation/AuthNavigator";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+
+type Props = NativeStackScreenProps<AuthNavigatorParams>;
+export const EmailLoginPage = (props: Props) => {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
@@ -50,7 +54,7 @@ export const EmailLoginPage = () => {
       </ScrollContainer>
       <Footer>
         <LongButton version="primary" title={t("login")} onPress={handleSubmit(SubmitHandle)} />
-        <NoAccountCreate />
+        <NoAccountCreate nativeScreenProps={props} />
       </Footer>
     </SafeAreaContainer>
   );
