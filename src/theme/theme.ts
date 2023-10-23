@@ -12,6 +12,7 @@ type FontsType = {
   paragraph: TextStyle;
   labelBig: TextStyle;
   label: TextStyle;
+  boldLabel: TextStyle;
 };
 
 const fonts: FontsType = {
@@ -63,6 +64,11 @@ const fonts: FontsType = {
   label: {
     fontSize: 12,
     fontWeight: "400",
+    fontFamily: "Rubik",
+  },
+  boldLabel: {
+    fontSize: 12,
+    fontWeight: "600",
     fontFamily: "Rubik",
   },
 };

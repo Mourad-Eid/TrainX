@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Text } from "react-native-paper";
 import { useAppTheme } from "../theme/theme";
+import { StyleProp, ViewStyle } from "react-native";
 
 type TypographyVersions =
   | "heading1"
@@ -12,14 +13,21 @@ type TypographyVersions =
   | "subHeader"
   | "paragraph"
   | "labelBig"
-  | "label";
+  | "label"
+  | "boldLabel";
 
-type TypographyProps = {
+export type TypographyProps = {
   version: TypographyVersions;
   color?: string;
+  style?: StyleProp<ViewStyle>;
 };
 
-export const Typography = ({ version, color = "#000000", children }: PropsWithChildren<TypographyProps>) => {
+export const Typography = ({
+  version,
+  style,
+  color = "#000000",
+  children,
+}: PropsWithChildren<TypographyProps>) => {
   const theme = useAppTheme();
-  return <Text style={[theme.fonts[version], { color: color }]}>{children}</Text>;
+  return <Text style={[theme.fonts[version], style, { color: color }]}>{children}</Text>;
 };

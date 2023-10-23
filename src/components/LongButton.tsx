@@ -1,21 +1,29 @@
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { AppTheme, useAppTheme } from "../theme/theme";
 import { Typography } from "./Typography";
 import React from "react";
 
 type StyledButtonProps = React.ComponentProps<typeof Pressable> & {
   version: "primary" | "secondary" | "tertiary" | "danger";
+  icon?: React.ReactNode;
   title: string;
 };
 
 export const LongButton = (props: StyledButtonProps) => {
-  const { version, title: buttonText, ...buttonProps } = props;
+  const { version, icon, title: buttonText, ...buttonProps } = props;
   const theme = useAppTheme();
   const styles = makeStyles(theme);
 
   return (
-    <Pressable style={({ pressed }) => [styles.basic, styles[version], { opacity: pressed ? 0.5 : 1 }]} {...buttonProps}>
-      <Typography version="subHeader" color={version === "secondary" ? theme.colors.primary : theme.colors.black5}>
+    <Pressable
+      style={({ pressed }) => [styles.basic, styles[version], { opacity: pressed ? 0.5 : 1 }]}
+      {...buttonProps}
+    >
+      {icon && <View style={styles.icon}>{icon}</View>}
+      <Typography
+        version="subHeader"
+        color={version === "secondary" ? theme.colors.primary : theme.colors.black5}
+      >
         {buttonText}
       </Typography>
     </Pressable>
@@ -25,6 +33,9 @@ export const LongButton = (props: StyledButtonProps) => {
 const makeStyles = (theme: AppTheme) =>
   StyleSheet.create({
     basic: {
+      paddingHorizontal: 8,
+      flexDirection: "row",
+      marginVertical: 4,
       marginHorizontal: 8,
       borderRadius: 8,
       height: 40,
@@ -40,6 +51,15 @@ const makeStyles = (theme: AppTheme) =>
       shadowOpacity: 0.25,
       shadowRadius: 2,
       elevation: 2,
+    },
+    content: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    icon: {
+      position: "absolute",
+      left: 16,
     },
     primary: {
       backgroundColor: theme.colors.primary,
