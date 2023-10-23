@@ -14,7 +14,7 @@ import { Footer } from "../../../components/Footer";
 import { NoAccountCreate } from "../Shared/NoAccountCreate";
 
 type Props = NativeStackScreenProps<AuthNavigatorParams>;
-export const LoginOptionsPage = ({ navigation }: Props) => {
+export const LoginOptionsPage = (props: Props) => {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
@@ -33,7 +33,7 @@ export const LoginOptionsPage = ({ navigation }: Props) => {
           title={t("mobileLogin")}
           icon={<AntDesign name="mobile1" size={24} color={theme.colors.black5} />}
           onPress={() => {
-            navigation.navigate("MobileLoginPage");
+            props.navigation.navigate("MobileLoginPage");
           }}
         />
         <LongButton
@@ -41,12 +41,12 @@ export const LoginOptionsPage = ({ navigation }: Props) => {
           title={t("emailLogin")}
           icon={<Ionicons name="mail-outline" size={24} color={theme.colors.primary} />}
           onPress={() => {
-            navigation.navigate("EmailLoginPage");
+            props.navigation.navigate("EmailLoginPage");
           }}
         />
       </ScrollContainer>
       <Footer>
-        <NoAccountCreate />
+        <NoAccountCreate nativeScreenProps={props} />
       </Footer>
     </SafeAreaContainer>
   );

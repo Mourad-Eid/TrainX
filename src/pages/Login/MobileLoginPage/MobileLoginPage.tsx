@@ -12,8 +12,11 @@ import { SafeAreaContainer } from "../../../components/SafeAreaContainer";
 import { PhoneInput } from "../../../components/InputTexts/PhoneInput";
 import { Footer } from "../../../components/Footer";
 import { NoAccountCreate } from "../Shared/NoAccountCreate";
+import { AuthNavigatorParams } from "../../../navigation/AuthNavigator";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export const MobileLoginPage = () => {
+type Props = NativeStackScreenProps<AuthNavigatorParams>;
+export const MobileLoginPage = (props: Props) => {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
@@ -51,7 +54,7 @@ export const MobileLoginPage = () => {
       </ScrollContainer>
       <Footer>
         <LongButton version="primary" title={t("login")} onPress={handleSubmit(SubmitHandle)} />
-        <NoAccountCreate />
+        <NoAccountCreate nativeScreenProps={props} />
       </Footer>
     </SafeAreaContainer>
   );
