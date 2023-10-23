@@ -16,6 +16,13 @@
     "passwordIsRequired": "Password is required.",
     "pass8CharsError": "Password must be 8 characters or more.",
     "anErrorOccurred": "An error has occurred",
+    "mobileLogin": "Login with Mobile",
+    "emailLogin": "Login with Email",
+    "enterEmail&Password": "Enter your email and password.",
+    "enterMobile&Passsword": "Enter your phone and password.",
+    "forgotPassword?": "Forgot password?",
+    "haveNoAccount?": "Don't have an account?",
+    "createAccount": "Create an account",
     /////////////////////////////////////////////////////////////////////////
     //Registeration
     ////////////////////////////////////////////////////////////////////////

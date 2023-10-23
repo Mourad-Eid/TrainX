@@ -19,7 +19,9 @@ export const FieldInput = (props: StyledTextInputProps) => {
   return (
     <View style={styles.inputContainer}>
       <Typography version="label">{label}</Typography>
-      <View style={[styles.inputFieldView, { borderColor: error ? theme.colors.error : theme.colors.black50 }]}>
+      <View
+        style={[styles.inputFieldView, { borderColor: error ? theme.colors.error : theme.colors.black50 }]}
+      >
         {leftIcon}
         <TextInput style={styles.inputField} {...props} />
         {rightIcon}
@@ -43,7 +45,7 @@ const makeStyles = (theme: AppTheme) =>
       fontFamily: theme.fonts.labelBig.fontFamily,
       textAlign: I18nManager.isRTL ? "right" : "left",
     },
-    inputContainer: { marginHorizontal: 8, marginVertical: 4 },
+    inputContainer: { marginVertical: 4 },
     inputFieldView: {
       borderRadius: 8,
       borderWidth: 0.5,
