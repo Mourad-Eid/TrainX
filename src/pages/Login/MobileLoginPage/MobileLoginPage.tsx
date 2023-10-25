@@ -46,10 +46,10 @@ export const MobileLoginPage = (props: Props) => {
         <PhoneInput name="phoneNumber" control={control} />
         <PasswordInput name="password" control={control} />
         <ClickableText
+          style={{ marginVertical: 4 }}
           version="boldLabel"
           text={t("forgotPassword?")}
           color={theme.colors.primary}
-          style={{ margin: 4 }}
         />
       </ScrollContainer>
       <Footer>
@@ -63,10 +63,12 @@ export const MobileLoginPage = (props: Props) => {
 const makeStyles = (theme: AppTheme) =>
   StyleSheet.create({
     container: { flex: 1, position: "relative" },
+    //TODO: remove this when creating the svg
     logo: {
       margin: 8,
       alignSelf: "center",
     },
+    //TODO: remove this when creating the svg
     pic: {
       height: 300,
       backgroundColor: theme.colors.primary,

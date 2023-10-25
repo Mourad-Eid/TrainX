@@ -9,10 +9,10 @@ type ClickableTextProps = React.ComponentProps<typeof Pressable> &
   };
 
 const ClickableText = (props: ClickableTextProps) => {
-  const { version, color, text, style, ...pressableProps } = props;
+  const { version, color, style, text, ...pressableProps } = props;
   return (
-    <Pressable {...pressableProps}>
-      <Typography style={style} version={version} color={color}>
+    <Pressable style={style} {...pressableProps}>
+      <Typography version={version} color={color}>
         {text}
       </Typography>
     </Pressable>

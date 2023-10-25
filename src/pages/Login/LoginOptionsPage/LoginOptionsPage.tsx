@@ -25,9 +25,7 @@ export const LoginOptionsPage = (props: Props) => {
           <Typography version="heading6">TrainX</Typography>
         </View>
         <View style={styles.pic}></View>
-        <Typography version="heading6" style={{ marginBottom: 8 }}>
-          {t("login")}
-        </Typography>
+        <Typography version="heading6">{t("login")}</Typography>
         <LongButton
           version="primary"
           title={t("mobileLogin")}
@@ -54,10 +52,12 @@ export const LoginOptionsPage = (props: Props) => {
 
 const makeStyles = (theme: AppTheme) =>
   StyleSheet.create({
+    //TODO: remove this when creating the svg
     logo: {
       margin: 8,
       alignSelf: "center",
     },
+    //TODO: remove this when creating the svg
     pic: {
       height: 300,
       backgroundColor: theme.colors.primary,

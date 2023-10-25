@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Text } from "react-native-paper";
 import { useAppTheme } from "../theme/theme";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, View, ViewStyle } from "react-native";
 
 type TypographyVersions =
   | "heading1"
@@ -29,5 +29,9 @@ export const Typography = ({
   children,
 }: PropsWithChildren<TypographyProps>) => {
   const theme = useAppTheme();
-  return <Text style={[theme.fonts[version], style, { color: color }]}>{children}</Text>;
+  return (
+    <View style={style}>
+      <Text style={[theme.fonts[version], { color: color }]}>{children}</Text>
+    </View>
+  );
 };
