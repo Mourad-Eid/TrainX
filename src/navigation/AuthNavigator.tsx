@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { LoginOptionsPage } from "../pages/Login/LoginOptionsPage/LoginOptionsPage";
 import { EmailLoginPage } from "../pages/Login/EmailLoginPage/EmailLoginPage";

@@ -52,11 +52,6 @@ const makeStyles = (theme: AppTheme) =>
       shadowRadius: 2,
       elevation: 2,
     },
-    content: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-    },
     icon: {
       position: "absolute",
       left: 16,
