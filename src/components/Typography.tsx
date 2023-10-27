@@ -19,19 +19,9 @@ type TypographyVersions =
 export type TypographyProps = {
   version: TypographyVersions;
   color?: string;
-  style?: StyleProp<ViewStyle>;
 };
 
-export const Typography = ({
-  version,
-  style,
-  color = "#000000",
-  children,
-}: PropsWithChildren<TypographyProps>) => {
+export const Typography = ({ version, color = "#000000", children }: PropsWithChildren<TypographyProps>) => {
   const theme = useAppTheme();
-  return (
-    <View style={style}>
-      <Text style={[theme.fonts[version], { color: color }]}>{children}</Text>
-    </View>
-  );
+  return <Text style={[theme.fonts[version], { color: color }]}>{children}</Text>;
 };

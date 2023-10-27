@@ -5,13 +5,12 @@ import React from "react";
 type ClickableTextProps = React.ComponentProps<typeof Pressable> &
   TypographyProps & {
     text: string;
-    style?: StyleProp<ViewStyle>;
   };
 
 const ClickableText = (props: ClickableTextProps) => {
-  const { version, color, style, text, ...pressableProps } = props;
+  const { version, color, text, ...pressableProps } = props;
   return (
-    <Pressable style={style} {...pressableProps}>
+    <Pressable {...pressableProps}>
       <Typography version={version} color={color}>
         {text}
       </Typography>

@@ -73,7 +73,7 @@ const makeStyles = (theme: AppTheme) =>
       elevation: 0,
     },
     tertiary: {
-      backgroundColor: theme.colors.warning,
+      backgroundColor: theme.colors.secondary,
     },
     danger: {
       backgroundColor: theme.colors.error,

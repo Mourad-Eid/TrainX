@@ -27,7 +27,7 @@ export const FieldInput = (props: StyledTextInputProps) => {
         {rightIcon}
       </View>
       {error && (
-        <Typography color="red" version="label">
+        <Typography color={theme.colors.error} version="label">
           {error.message || t("anErrorOccurred")}
         </Typography>
       )}

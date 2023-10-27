@@ -11,12 +11,14 @@ import ClickableText from "../../../components/ClickableText";
 import { SafeAreaContainer } from "../../../components/SafeAreaContainer";
 import { PhoneInput } from "../../../components/InputTexts/PhoneInput";
 import { Footer } from "../../../components/Footer";
-import { NoAccountCreate } from "../Shared/NoAccountCreate";
 import { AuthNavigatorParams } from "../../../navigation/AuthNavigator";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ContentWrapper } from "../../../components/ContentWrapper";
+import { TitleAndParagraph } from "../../../components/TitleAndParagraph";
+import { TextAndClickableText } from "../../../components/TextAndClickableText";
 
 type Props = NativeStackScreenProps<AuthNavigatorParams>;
-export const MobileLoginPage = (props: Props) => {
+export const MobileLoginPage = ({ navigation }: Props) => {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
@@ -33,28 +35,27 @@ export const MobileLoginPage = (props: Props) => {
   return (
     <SafeAreaContainer>
       <ScrollContainer>
-        <View style={styles.logo}>
-          <Typography version="heading6">TrainX</Typography>
-        </View>
-        <View style={styles.pic}></View>
-        <Typography version="heading6" style={{ marginBottom: 4 }}>
-          {t("login")}
-        </Typography>
-        <Typography version="label" color={theme.colors.black50} style={{ marginBottom: 4 }}>
-          {t("enterMobile&Passsword")}
-        </Typography>
-        <PhoneInput name="phoneNumber" control={control} />
-        <PasswordInput name="password" control={control} />
-        <ClickableText
-          style={{ marginVertical: 4 }}
-          version="boldLabel"
-          text={t("forgotPassword?")}
-          color={theme.colors.primary}
-        />
+        <ContentWrapper rowGap={8}>
+          <View style={styles.logo}>
+            <Typography version="heading6">TrainX</Typography>
+          </View>
+          <View style={styles.pic}></View>
+          <TitleAndParagraph title={t("login")} paragraph={t("enterMobile&Passsword")} />
+          <PhoneInput name="phoneNumber" control={control} />
+          <PasswordInput name="password" control={control} />
+          <ClickableText version="boldLabel" text={t("forgotPassword?")} color={theme.colors.primary} />
+        </ContentWrapper>
       </ScrollContainer>
       <Footer>
         <LongButton version="primary" title={t("login")} onPress={handleSubmit(SubmitHandle)} />
-        <NoAccountCreate nativeScreenProps={props} />
+        <TextAndClickableText
+          alignSelfCenter
+          text={t("haveNoAccount?")}
+          clickableText={t("createAccount")}
+          onClickableTextPress={() => {
+            navigation.navigate("SignupFields");
+          }}
+        />
       </Footer>
     </SafeAreaContainer>
   );

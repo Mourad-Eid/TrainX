@@ -9,18 +9,18 @@ import { LongButton } from "../../../components/LongButton";
 import { AuthNavigatorParams } from "../../../navigation/AuthNavigator";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { SafeAreaContainer } from "../../../components/SafeAreaContainer";
-import { ScrollContainer } from "../../../components/ScrollContainer";
 import { Footer } from "../../../components/Footer";
-import { NoAccountCreate } from "../Shared/NoAccountCreate";
+import { ContentWrapper } from "../../../components/ContentWrapper";
+import { TextAndClickableText } from "../../../components/TextAndClickableText";
 
 type Props = NativeStackScreenProps<AuthNavigatorParams>;
-export const LoginOptionsPage = (props: Props) => {
+export const LoginOptionsPage = ({ navigation }: Props) => {
   const { t } = useTranslation();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
   return (
     <SafeAreaContainer>
-      <ScrollContainer>
+      <ContentWrapper>
         <View style={styles.logo}>
           <Typography version="heading6">TrainX</Typography>
         </View>
@@ -31,7 +31,7 @@ export const LoginOptionsPage = (props: Props) => {
           title={t("mobileLogin")}
           icon={<AntDesign name="mobile1" size={24} color={theme.colors.black5} />}
           onPress={() => {
-            props.navigation.navigate("MobileLoginPage");
+            navigation.navigate("MobileLoginPage");
           }}
         />
         <LongButton
@@ -39,12 +39,19 @@ export const LoginOptionsPage = (props: Props) => {
           title={t("emailLogin")}
           icon={<Ionicons name="mail-outline" size={24} color={theme.colors.primary} />}
           onPress={() => {
-            props.navigation.navigate("EmailLoginPage");
+            navigation.navigate("EmailLoginPage");
           }}
         />
-      </ScrollContainer>
+      </ContentWrapper>
       <Footer>
-        <NoAccountCreate nativeScreenProps={props} />
+        <TextAndClickableText
+          alignSelfCenter
+          text={t("haveNoAccount?")}
+          clickableText={t("createAccount")}
+          onClickableTextPress={() => {
+            navigation.navigate("SignupFields");
+          }}
+        />
       </Footer>
     </SafeAreaContainer>
   );
